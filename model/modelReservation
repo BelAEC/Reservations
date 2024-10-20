@@ -1,0 +1,31 @@
+const mongoose = require('mongoose');
+
+const reservationSchema  = new mongoose.Schema({
+
+    court_no: {
+        type: Number,
+    },
+    type:{
+        type:String,
+    },
+    date:{
+        type:Date,
+        
+        },
+    time:{
+        type:String,
+    },
+    status:{
+        type:String,
+        default:'Available',
+    },
+    player_name:{
+        type: String,
+        required: true, // Optional: You can add this if the field is required
+   }
+});
+module.exports = mongoose.model('Reservation', reservationSchema);
+
+
+
+
